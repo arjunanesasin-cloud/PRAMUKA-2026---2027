@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Pramuka Hologram</title>
+<style>
+/* ===== Gaya Umum ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  overflow-x: hidden;
+  background: radial-gradient(circle at center, #5c2e0e, #2e1a0f, #1a0f08);
+}
+body::after {
+  content: "";
+  position: fixed; top: 0; left: 0;
+  width: 200%; height: 200%;
+  background-image: linear-gradient(rgba(255,200,100,0.15) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,200,100,0.15) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMove 15s linear infinite;
+  z-index: -1;
+}
+@keyframes gridMove { from {transform:translateY(0);} to {transform:translateY(60px);} }
+
+/* ===== Header ===== */
+header {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.6);
+  border-bottom: 2px solid #FFD700;
+  box-shadow: 0 0 25px #FFD700;
+}
+header img {
+  width: 90px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 15px #FFD700);
+}
+header h1 { margin: 0; font-size: 2em; color: #FFD700; text-shadow: 0 0 20px #FFA500, 0 0 40px #FFD700; }
+header h2 { color: #FFDEAD; text-shadow: 0 0 10px #FFD700; }
+header p { font-style: italic; color: #FFD700; }
+
+/* ===== Periode ===== */
+.periode {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 20px auto;
+  padding: 10px 0;
+  background: rgba(255,215,0,0.2);
+  border: 2px solid #FFD700;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #FFD700;
+  color: #FFD700;
+  text-shadow: 0 0 10px #FFA500;
+  max-width: 500px;
+}
+
+/* ===== Navigasi ===== */
+nav {
+  display: flex;
+  justify-content: center;
+  background: rgba(50,20,0,0.6);
+  padding: 10px;
+  flex-wrap: wrap;
+}
+nav a {
+  color: #FFD700;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+nav a:hover {
+  color: #FFF8DC;
+  text-shadow: 0 0 10px #FFD700;
+}
+
+/* ===== Section ===== */
+section {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255,200,100,0.5);
+}
+section h2 {
+  text-align: center;
+  color: #FFD700;
+  text-shadow: 0 0 10px #FFD700;
+  margin-bottom: 20px;
+}
+
+/* ===== Kartu ===== */
+.card, .anggota-card {
+  background: rgba(80,40,0,0.6);
+  margin: 10px 0;
+  padding: 10px 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 0 15px rgba(255,200,100,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card img {
+  width: 250px;
+  height: auto;
+  border-radius: 12px;
+  animation: holoGlow 3s infinite alternate;
+}
+.card:hover, .anggota-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 0 25px rgba(0,255,255,0.7), 0 0 50px rgba(0,255,255,0.5);
+}
+.card:hover img, .anggota-card:hover img {
+  filter: brightness(1.2) drop-shadow(0 0 20px #00FFFF);
+  transform: scale(1.12);
+  box-shadow: 0 0 30px #00FFFF, 0 0 50px cyan;
+}
+@keyframes holoGlow {
+  0% { box-shadow: 0 0 5px #00ffff, 0 0 10px #1e90ff; transform: scale(1);}
+  50% { box-shadow: 0 0 25px cyan, 0 0 45px #00ffff; transform: scale(1.05);}
+  100% { box-shadow: 0 0 5px #00ffff, 0 0 10px #1e90ff; transform: scale(1);}
+}
+
+/* ===== Tabel ===== */
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  box-shadow: 0 2px 10px rgba(255,200,100,0.4);
+}
+th, td {
+  border: 1px solid #FFD700;
+  padding: 10px;
+  text-align: left;
+  color: #fff;
+}
+th { background: #FFD700; color: #000; }
+caption { font-weight: bold; margin: 10px 0; color: #FFD700; text-shadow: 0 0 10px #FFD700; }
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  background: rgba(0,0,0,0.7);
+  border-top: 2px solid #FFD700;
+  color: #FFD700;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="LOGO.png.png" alt="Logo Pramuka">
+  <h1>Gugus Depan 11-027-11.028</h1>
+  <h2>Pangkalan SMP Negeri 1 Sindang</h2>
+  <p>“Satyaku Kudarmakan, Darmaku Kubaktikan”</p>
+</header>
+
+<div class="periode">Periode Gudep 2026 – 2027</div>
+
+<nav>
+  <a href="#pembina">Pembina</a>
+  <a href="#pratama">Pratama</a>
+  <a href="#data">Data Anggota</a>
+</nav>
+
+<section id="pembina">
+  <h2>PEMBINA</h2>
+  <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
+    <div class="card">
+      <img src="pembina (1).jpeg.jpeg" alt="Dedi Kusbandi M.G">
+      <p><b>Dedi Kusbandi M.G</b></p>
+    </div>
+    <div class="card">
+      <img src="pembina (2).jpeg.jpeg" alt="Santi Rosmalasari">
+      <p><b>Santi Rosmalasari</b></p>
+    </div>
+    <div class="card">
+      <img src="pembina (3).jpeg.jpeg" alt="Eka Amin Hidayat">
+      <p><b>Eka Amin Hidayat</b></p>
+    </div>
+  </div>
+</section>
+
+<section id="pratama">
+  <h2>PRATAMA</h2>
+  <div style="display:flex; gap:40px; flex-wrap:wrap; justify-content:center;">
+    <div class="card">
+      <img src="pratama (2).jpeg.jpeg" alt="Ali Ridwanulloh">
+      <p><b>Ali Ridwanulloh</b></p>
+    </div>
+    <div class="card">
+      <img src="pratama (1).jpeg.jpeg" alt="Jilan Mufidah">
+      <p><b>Jilan Mufidah</b></p>
+    </div>
+  </div>
+</section>
+
+<section id="data">
+  <h2>Data Anggota</h2>
+  <table>
+    <caption>🧭 Penggalang Putra</caption>
+    <thead><tr><th>No</th><th>Nama Lengkap</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Aditia Pratama</td></tr>
+      <tr><td>2</td><td>Arya Putra Zhivano</td></tr>
+      <tr><td>3</td><td>Rifky Arif Fadilah</td></tr>
+      <tr><td>4</td><td>Muhamad Resky</td></tr>
+      <tr><td>5</td><td>Gusti Sumjaya</td></tr>
+      <tr><td>6</td><td>Agung Permana</td></tr>
+      <tr><td>7</td><td>Agis Maulana Ibrohim</td></tr>
+      <tr><td>8</td><td>Muhammad Zhidan Firmansyah</td></tr>
+      <tr><td>9</td><td>Fadjar Paristian U</td></tr>
+      <tr><td>10</td><td>Nova Khanisa Fairuz</td></tr>
+      <tr><td>11</td><td>Tegar Muhammad Maulana</td></tr>
+    </tbody>
+  </table>
+  <table>
+    <caption>🏕️ Penggalang Putri</caption>
+    <thead><tr><th>No</th><th>Nama Lengkap</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Adinda Putri Sugianto</td></tr>
+      <tr><td>2</td><td>Ajeng Raiza Jahra</td></tr>
+      <tr><td>3</td><td>Livi Mei Saharni</td></tr>
+      <tr><td>4</td><td>Nadira Meilani Putri</td></tr>
+      <tr><td>5</td><td>Nur Aprilia Sellfa Balqis</td></tr>
+      <tr><td>6</td><td>Rina Setiasih</td></tr>
+      <tr><td>7</td><td>Sella Aprilia</td></tr>
+      <tr><td>8</td><td>Selvia Anindita Nur Fitriani</td></tr>
+      <tr><td>9</td><td>Siti Nur Aprilia</td></tr>
+      <tr><td>10</td><td>Syifa Syifaul Zannah</td></tr>
+      <tr><td>11</td><td>Zaskia Agira Putri</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer>
+  &copy; 2026 | Website Pramuka Gugus Depan 11-027-11.028
+</footer>
+
+<!-- Musik Latar -->
+<audio id="bgMusic" autoplay loop>
+  <source src="MUSIK.mp3.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Kontrol Musik -->
+<div style="position: fixed; bottom: 20px; right: 20px; background: rgba(0,0,0,0.6); padding: 10px 15px; border-radius: 12px; box-shadow: 0 0 15px #FFD700; display: flex; align-items: center; gap: 10px;">
+  <button id="playPauseBtn" style="padding:5px 10px; background:#FFD700; border:none; border-radius:5px; font-weight:bold; cursor:pointer;">Pause</button>
+  <label style="color:#FFD700; font-size:0.9em;">Volume</label>
+  <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+</div>
+
+<script>
+const audio = document.getElementById('bgMusic');
+const playPauseBtn = document.getElementById('playPauseBtn');
+const volumeSlider = document.getElementById('volumeSlider');
+playPauseBtn.addEventListener('click', ()=>{ if(audio.paused){ audio.play(); playPauseBtn.textContent='Pause';} else{ audio.pause(); playPauseBtn.textContent='Play';}});
+volumeSlider.addEventListener('input', ()=>{ audio.volume = volumeSlider.value; });
+</script>
+
+</body>
+</html>
